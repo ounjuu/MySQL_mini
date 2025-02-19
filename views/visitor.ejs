@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/public/css/visitor.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div>방명록 등록</div>
+    <form>
+      <input name="userid" id="userid" placeholder="유저 id 등록" />
+      <input name="userName" id="userName" placeholder="사용자 이름" />
+      <input name="comment" id="comment" placeholder="방명록" />
+      <button type="submit" onclick="createData()">등록</button>
+    </form>
+    <table>
+      <thead>
+        <tr>
+          <td>ID</td>
+          <td>작성자</td>
+          <td>방명록</td>
+          <td>수정</td>
+          <td>삭제</td>
+        </tr>
+      </thead>
+      <tbody>
+        <% for (let i = 0; i < data.length; i++){ %>
+        <tr id="tr_<%= data[i].id %>">
+          <td><%= data[i].userid %></td>
+          <td>
+            <a href="/visitor/detail/<%= data[i].id %>"><%= data[i].name %></a>
+          </td>
+          <td><%= data[i].comment %></td>
+          <td><input type="button" value="수정" /></td>
+          <td><input type="button" value="삭제" /></td>
+        </tr>
+        <% } %>
+      </tbody>
+    </table>
+  </body>
+  <script>
+    const createData = () => {
+      // 🔹 input 값 가져오기
+      const userid = document.getElementById("userid").value;
+      const name = document.getElementById("userName").value;
+      const comment = document.getElementById("comment").value;
+
+      // 🔹 빈 값 체크 (유효성 검사)
+      if (!userid || !name || !comment) {
+        alert("모든 값을 입력해주세요!");
+        return;
+      }
+
+      axios({
+        method: "post",
+        url: "visitor/post/test",
+        data: { userid, name, comment },
+      })
+        .then((res) => {
+          alert("등록성공");
+          console.log(res);
+          window.location.reload();
+        })
+        .catch((e) => {
+          console.log(e);
+        });
+    };
+  </script>
+</html>

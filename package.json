@@ -1,0 +1,26 @@
+{
+  "name": "mysql_mini",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ounjuu/MySQL_mini.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ounjuu/MySQL_mini/issues"
+  },
+  "homepage": "https://github.com/ounjuu/MySQL_mini#readme",
+  "description": "",
+  "dependencies": {
+    "axios": "^1.7.9",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "mysql2": "^3.12.0"
+  }
+}

@@ -1,0 +1,55 @@
+/* 전체 페이지 스타일 */
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  padding: 0;
+}
+
+/* 입력 폼 스타일 */
+div {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+input {
+  width: 200px;
+  padding: 8px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.visitorBtn {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  background: none;
+  cursor: pointer;
+}
+
+/* 테이블 스타일 */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+thead td {
+  font-weight: bold;
+  border-bottom: 2px solid #000;
+  padding: 8px;
+}
+
+tbody td {
+  border-bottom: 1px solid #ccc;
+  padding: 8px;
+}
+
+/* 버튼 기본 스타일 */
+td input[type="button"] {
+  padding: 5px 8px;
+  border: 1px solid #ccc;
+  background: none;
+  cursor: pointer;
+}
