@@ -1,6 +1,5 @@
 const express = require("express");
 const path = require("path");
-
 const app = express();
 const port = 3000;
 
@@ -11,6 +10,7 @@ app.use(express.urlencoded({ extended: true }));
 // json 형식으로 받을 것임
 app.use(express.json());
 app.use("/public", express.static(path.join(__dirname, "public")));
+// 🔹 정적 파일 제공 (업로드된 이미지 접근 가능)
 
 // 라우터예시 /users 경로에 대한 라우팅 처리
 app.use("/visitor", visitorRouters);
